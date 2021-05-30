@@ -1,7 +1,10 @@
 # Projeto de site de classificados para estudo.
-**Criado:** *05-30-2021*
+
+**Criado:** *30-05-2021*
+**Projeto em desenvolvimento**
 **Colaborador:** 
 >**Reytler Souza**
+
 >Projeto MVC na linguagem PHP para estudo
 
 **Contém:**
