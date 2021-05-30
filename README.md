@@ -17,6 +17,6 @@
 >3. CSS
 >4. HTML
 
-> Para usar basta usar o comando "docker-compose up -d" no diretório raiz e acessar http://localhost .
+> Para usar basta rodar o comando "docker-compose up -d" no diretório raiz e acessar http://localhost .
 
 > OBS.: Antes de acessar http://localhost , deve-se acessar http://localhost:8080, entrar no PhpMyadmin, dar as devidas permissões ao usuário master e subir o backup do arquivo "classificados.sql".
