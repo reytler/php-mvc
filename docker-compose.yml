@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  apache:
+    build: .
+    container_name: php
+    restart: always
+    ports:
+      - '80:80'
+    volumes:
+      - ./src:/var/www/html:rw
+    depends_on:
+      - mysqldb
+    links:
+      - mysqldb   
+
+  mysqldb:
+    container_name: db
+    image: mysql:5.7
+    restart: always
+    ports:
+      - '3306:3306'
+    environment:
+      - MYSQL_ROOT_PASSWORD=master
+      - MYSQL_DATABASE=classificados
+      - MYSQL_USER=master
+      - MYSQL_PASSWORD=master
+
+  phpmyadmin:
+    container_name: myadmin
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      - PMA_ARBITRARY=1
