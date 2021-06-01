@@ -47,6 +47,10 @@
             }
         }
 
+        public function logout(){
+            unset($_SESSION['cLogin']);
+        }
+
         public function getNome($id){
              
             $sql= $this->db->prepare("SELECT nome FROM usuarios WHERE id=:id");
