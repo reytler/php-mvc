@@ -4,10 +4,6 @@ class cadastrarController extends helperController{
         $this->loadTemplate('cadastrar');
     }
 
-    public function sucesso($nome){
-        $this->loadTemplate('sucesso', $nome);
-    }
-
     public function incluir(){
         $u = new Usuarios();
         $nome = $_POST['nome'];
@@ -19,5 +15,9 @@ class cadastrarController extends helperController{
             'nome' => $nome,
         );
         $this->sucesso($nome);
+    }
+
+    public function sucesso($nome){
+        $this->loadTemplate('sucesso', $nome);
     }
 }

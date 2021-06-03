@@ -1,10 +1,7 @@
 <div class="container-fluid">
     <?php
     if (isset($_SESSION['cLogin'])) {
-        $id = $_SESSION['cLogin'];
-        if ($u->getNome($id)) {
-            echo '<h1>Olá, ' . $_SESSION['nome'] . '<h1><br>';
-        }
+        echo '<h1>Olá, ' . $nome . '<h1><br>';
     }
     ?>
 
@@ -27,7 +24,7 @@
         <div class="col-sm-8">
             <h1><?php echo $info['titulo']; ?></h1>
             <h4><?php echo utf8_encode($info['categoria']); ?></h4>
-            <p><?php echo utf8_encode($info['descricao']); ?></p>
+            <p><?php echo $info['descricao']; ?></p>
             <br>
             <h3>R$<?php echo number_format($info['valor'], 2); ?></h3>
             <h4>Telefone: <?php echo $info['telefone']; ?></h4>
