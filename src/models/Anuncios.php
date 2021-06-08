@@ -249,4 +249,3 @@
             return $id_anuncio;
         }
     }
-?>

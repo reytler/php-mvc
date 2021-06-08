@@ -1,18 +1,21 @@
 <?php
-class helperController {
+class helperController
+{
 
-    public function loadView($viewName, $viewData = array()) {
+    public function loadView($viewName, $viewData = array())
+    {
         extract($viewData);
-        require 'views/'.$viewName.'.php';
+        require 'views/' . $viewName . '.php';
     }
 
-    public function loadTemplate($viewName, $viewData = array()) {
+    public function loadTemplate($viewName, $viewData = array())
+    {
         require 'views/template.php';
     }
 
-    public function loadViewInTemplate($viewName, $viewData = array()){
+    public function loadViewInTemplate($viewName, $viewData = array())
+    {
         extract($viewData);
-        require 'views/'.$viewName.'.php';
+        require 'views/' . $viewName . '.php';
     }
-
 }
