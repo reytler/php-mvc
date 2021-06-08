@@ -113,6 +113,7 @@
 
             if($sql->rowCount()>0){
                 $array = $sql->fetch();
+                
                 $array['fotos'] = array();
 
                 $sql = $this->db->prepare("SELECT id,url FROM anuncios_imagens WHERE id_anuncio = :id_anuncio");
@@ -122,6 +123,7 @@
                 if($sql->rowCount()>0){
                     $array['fotos'] = $sql->fetchAll();
                 }
+                
             }
 
             return $array;
@@ -154,7 +156,7 @@
             $sql->bindValue(":id_usuario", $_SESSION['cLogin']);
             $sql->bindValue(":id", $id);
             $sql->execute();
-
+            /*
             if(count($fotos) > 0){
                 for($q=0;$q<count($fotos['tmp_name']);$q++){
                     $tipo = $fotos['type'][$q];
@@ -192,6 +194,7 @@
                     }
                 }
             }
+            */
         }
 
         public function excluirAnuncio($id){

@@ -10,5 +10,18 @@
                 return $array;
             }
         }
+
+        public function getCategoria($id){
+            $sql = $this->db->prepare("SELECT * FROM categorias WHERE id = :id");
+
+            $sql->bindValue(":id", $id);
+
+            $sql->execute();
+
+            if($sql->rowCount()>0){
+                $result = $sql->fetch();
+                return $result;
+            }
+        }
     }
 ?>
