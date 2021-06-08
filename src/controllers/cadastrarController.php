@@ -1,10 +1,13 @@
 <?php
-class cadastrarController extends helperController{
-    public function index(){
+class cadastrarController extends helperController
+{
+    public function index()
+    {
         $this->loadTemplate('cadastrar');
     }
 
-    public function incluir(){
+    public function incluir()
+    {
         $u = new Usuarios();
         $nome = $_POST['nome'];
         $email = $_POST['email'];
@@ -17,7 +20,8 @@ class cadastrarController extends helperController{
         $this->sucesso($nome);
     }
 
-    public function sucesso($nome){
+    public function sucesso($nome)
+    {
         $this->loadTemplate('sucesso', $nome);
     }
 }

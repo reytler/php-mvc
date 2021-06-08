@@ -1,14 +1,17 @@
 <?php
-class addanuncioController extends helperController{
-    public function index(){
+class addanuncioController extends helperController
+{
+    public function index()
+    {
         $dados = array();
         $c = new Categorias();
         $categorias = $c->getLista();
         $dados['categorias'] = $categorias;
-        $this->loadTemplate('addanuncio',$dados);
+        $this->loadTemplate('addanuncio', $dados);
     }
 
-    public function adicionar(){
+    public function adicionar()
+    {
         $a = new Anuncios();
 
         $titulo = $_POST['titulo'];
@@ -24,7 +27,8 @@ class addanuncioController extends helperController{
         $this->sucesso($titleprd);
     }
 
-    public function sucesso($titleprd){
+    public function sucesso($titleprd)
+    {
         $this->loadTemplate('sucessoaddprd', $titleprd);
     }
 }
